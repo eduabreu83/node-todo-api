@@ -1,2 +1,30 @@
 import { Model, DataTypes} from 'sequelize';
-import {sequelize} from '..instance/pg'
+import {sequelize} from '..instance/my';
+import { timeStamp } from 'console';
+
+export interface Todoinstance extends Model{
+    id: number;
+    title:string;
+    done: boolean;
+
+}
+
+export const Todo = sequelize.define<TodoInstance>('Todo', {
+
+    id:{
+        primaryKey:true,
+        autoIncrement:true,
+        type:DataTypes.INTERGER
+    },
+    title:{
+        type:DataTypes.STRING
+    },
+    done:{
+        type:DataTypes.BOOLEAN,
+        defaultValue: false
+    }
+}, {
+    tableName:'todos',
+    timeStamp: false
+
+});
