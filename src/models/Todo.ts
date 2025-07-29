@@ -1,5 +1,5 @@
 import { Model, DataTypes} from 'sequelize';
-import {sequelize} from '..instance/my';
+import {sequelize} from '..instances/my';
 import { timeStamp } from 'console';
 
 export interface Todoinstance extends Model{
@@ -14,7 +14,7 @@ export const Todo = sequelize.define<Todoinstance>('Todo', {
     id:{
         primaryKey:true,
         autoIncrement:true,
-        type:DataTypes.INTERGER
+        type:DataTypes.INTEGER
     },
     title:{
         type:DataTypes.STRING

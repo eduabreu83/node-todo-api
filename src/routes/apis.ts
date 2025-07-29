@@ -1,8 +1,8 @@
-import {Router} from 'express';
+import { Router } from 'express';
 
 import * as TodoController from '../controllers/todo.controllers';
 
-const router = Router();
+export const router = Router();
 
 router.get('/todo', TodoController.all);
 router.post('/todo', TodoController.add);
