@@ -1,15 +1,15 @@
 import { Model, DataTypes} from 'sequelize';
-import {sequelize} from '..instances/my';
 import { timeStamp } from 'console';
+import sequelize from 'sequelize/types/sequelize';
 
-export interface Todoinstance extends Model{
+export interface TodoInstance extends Model{
     id: number;
     title:string;
     done: boolean;
 
 }
 
-export const Todo = sequelize.define<Todoinstance>('Todo', {
+export const Todo = sequelize.define<TodoInstance>('Todo', {
 
     id:{
         primaryKey:true,
